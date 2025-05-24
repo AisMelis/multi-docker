@@ -13,4 +13,12 @@ after_success:
   - docker build -t ais777/multi-nginx ./nginx
   - docker build -t ais777/multi-server ./server
   - docker build -t ais777/multi-worker ./worker
-  
+  # Log in to the Docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push them to docker hub
+  - docker push ais777/multi-client
+  - docker push ais777/multi-nginx
+  - docker push ais777/multi-server
+  - docker push ais777/multi-worker
+
+
