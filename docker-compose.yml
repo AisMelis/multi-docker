@@ -30,6 +30,6 @@ services:
     ports:
       - "80:80"
   redis:
-    iamge: "redis:latest"
+    image: "redis:latest"
     hostname: redis
-    mem_limmit: 64m
+    mem_limit: 64m
